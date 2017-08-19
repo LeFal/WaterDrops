@@ -1,9 +1,9 @@
 # WaterDrops
 Simple water drops animation 💧
 
-![ExampleImages1.gif](ExampleImages/ExampleImages1.gif)
-![ExampleImages2.gif](ExampleImages/ExampleImages2.gif)
-![ExampleImages3.gif](ExampleImages/ExampleImages3.gif)
+![ExampleImages1.gif](ExampleImages/ExampleImages1.gif){:height="50%" width="50%"}
+![ExampleImages2.gif](ExampleImages/ExampleImages2.gif){:height="50%" width="50%"}
+![ExampleImages3.gif](ExampleImages/ExampleImages3.gif){:height="50%" width="50%"}
 
 ## Example
 ```swift
