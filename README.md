@@ -1,9 +1,9 @@
 # WaterDrops
 Simple water drops animation 💧
 
-![ExampleImage1.gif](ExampleImages/ExampleImage1.gif)
-![ExampleImage2.gif](ExampleImages/ExampleImage2.gif)
-![ExampleImage3.gif](ExampleImages/ExampleImage3.gif)
+![ExampleImages1.gif](ExampleImages/ExampleImages1.gif)
+![ExampleImages2.gif](ExampleImages/ExampleImages2.gif)
+![ExampleImages3.gif](ExampleImages/ExampleImages3.gif)
 
 ## Example
 ```swift
