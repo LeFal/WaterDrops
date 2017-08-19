@@ -6,16 +6,9 @@
 //  Copyright © 2017 LeFal. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-
-enum DropDirection {
-    case up
-    case down
-}
-
-class WaterDropsView: UIView {
+open class WaterDropsView: UIView {
     
     ///Waterdrop's direction
     open var direction : DropDirection = .up
@@ -23,6 +16,12 @@ class WaterDropsView: UIView {
     ///Number of drops
     open var dropNum: Int = 10
     
+    @objc
+    public enum DropDirection {
+        case up
+        case down
+    }
+
     ///Waterdrop's color
     open var color: UIColor = UIColor.blue.withAlphaComponent(0.7)
     ///The minimum size of a waterdrop
@@ -50,7 +49,7 @@ class WaterDropsView: UIView {
         super.init(frame: frame)
     }
     
-    init(frame: CGRect, direction: DropDirection = .up, dropNum: Int = 10, color: UIColor = UIColor.blue.withAlphaComponent(0.7), minDropSize: CGFloat = 4, maxDropSize: CGFloat = 10, minLength: CGFloat = 0, maxLength: CGFloat = 100, minDuration: TimeInterval = 4, maxDuration: TimeInterval = 12)  {
+    public init(frame: CGRect, direction: DropDirection = .up, dropNum: Int = 10, color: UIColor = UIColor.blue.withAlphaComponent(0.7), minDropSize: CGFloat = 4, maxDropSize: CGFloat = 10, minLength: CGFloat = 0, maxLength: CGFloat = 100, minDuration: TimeInterval = 4, maxDuration: TimeInterval = 12)  {
         self.direction = direction
         self.dropNum = dropNum
         self.color = color
@@ -63,17 +62,17 @@ class WaterDropsView: UIView {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     
     /// Required : Add water drops animation in view
-    func addAnimation() {
+    public func addAnimation() {
         let viewConfiguration = ViewConfig(color: self.color,
                                            minDropSize: self.minDropSize,
                                            maxDropSize: self.maxDropSize,
