@@ -66,7 +66,7 @@ open class WaterDropsView: UIView {
         super.init(coder: aDecoder)
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
     }
     
