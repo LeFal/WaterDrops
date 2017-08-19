@@ -16,7 +16,7 @@ open class WaterDropsView: UIView {
     ///Number of drops
     open var dropNum: Int = 10
     
-    @objc
+    
     public enum DropDirection {
         case up
         case down
@@ -37,7 +37,7 @@ open class WaterDropsView: UIView {
     ///The maximum duration of animation
     open var maxDuration: TimeInterval = 12
     
-    private override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         self.dropNum = 10
         self.color = UIColor.blue.withAlphaComponent(0.7)
         self.minDropSize = 4
