@@ -35,10 +35,6 @@ override func viewDidLoad() {
 pod "WaterDrops"
 ```
 
-### Carthage
-```
-```
-
 ## Author
 
 LeFal, qwertyhj2@gmail.com
