@@ -1,7 +1,7 @@
 # WaterDrops
 Simple water drops animation 💧
 
-<img src="ExampleImages/ExampleImages1.gif" width="200"> <img src="ExampleImages/ExampleImages2.gif" width="200"> <img src="ExampleImages/ExampleImages3.gif" width="200">
+<img src="ExampleImages/ExampleImages1.gif" width="250"> <img src="ExampleImages/ExampleImages2.gif" width="250"> <img src="ExampleImages/ExampleImages3.gif" width="250">
 
 ## Example
 ```swift
@@ -33,10 +33,6 @@ override func viewDidLoad() {
 ### Cocoapods
 ```ruby
 pod "WaterDrops"
-```
-
-### Carthage
-```
 ```
 
 ## Author
