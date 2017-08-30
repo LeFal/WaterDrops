@@ -21,7 +21,7 @@ open class WaterDropsView: UIView {
         case up
         case down
     }
-
+    
     ///Waterdrop's color
     open var color: UIColor = UIColor.blue.withAlphaComponent(0.7)
     ///The minimum size of a waterdrop
@@ -100,24 +100,17 @@ open class WaterDropsView: UIView {
         
         // make waterdrop
         let positionY = direction == .up ? self.frame.height : -randomSize
-        var waterdrop : UIView? = UIView()
-        waterdrop?.frame = CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
-        waterdrop?.backgroundColor = config.color
-        waterdrop?.layer.cornerRadius = randomSize/2
-        self.addSubview(waterdrop!)
+        let waterdrop : UIView = UIView()
+        waterdrop.frame = CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
+        waterdrop.backgroundColor = config.color
+        waterdrop.layer.cornerRadius = randomSize/2
+        self.addSubview(waterdrop)
         
         // animation
-        UIView.animate(withDuration: randomDuration, animations: {
-            waterdrop?.frame.origin.y += length
-            waterdrop?.alpha = 0.0
-        }, completion: { (isCompleted: Bool) -> Void in
-            if isCompleted {
-                waterdrop = nil
-                
-                // After animation is completed, it recreate oneself
-                self.randomWaterdrop(config: config, direction: direction)
-            }
-        })
+        UIView.animate(withDuration: randomDuration, delay: 0.0, options: .repeat, animations: {
+            waterdrop.frame.origin.y += length
+            waterdrop.alpha = 0.0
+        }, completion: nil)
     }
     
     fileprivate struct ViewConfig {
