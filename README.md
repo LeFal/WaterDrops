@@ -8,7 +8,7 @@ Simple water drops animation 💧
 override func viewDidLoad() {
     super.viewDidLoad()
     
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.black
 
         // custom configuration
         let waterDropView = WaterDropsView {
