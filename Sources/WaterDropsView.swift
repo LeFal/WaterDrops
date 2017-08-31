@@ -39,7 +39,6 @@ open class WaterDropsView: UIView {
     open var maxDuration: TimeInterval = 12
     
     fileprivate var isStarted = false
-    fileprivate var viewConfiguration : ViewConfig?
     
     public init(frame: CGRect = CGRect.zero, build: waterDropBuildClosure) {
         super.init(frame: frame)
@@ -66,12 +65,6 @@ open class WaterDropsView: UIView {
     /// Required : Add water drops animation in view
     public func startAnimation() {
         isStarted = true
-        viewConfiguration = ViewConfig(minDropSize: self.minDropSize,
-                                       maxDropSize: self.maxDropSize,
-                                       minLength: self.minLength,
-                                       maxLength: self.maxLength,
-                                       minDuration: self.minDuration,
-                                       maxDuration: self.maxDuration)
         makeRandomWaterDrops(num: dropNum, direction: direction)
     }
     
@@ -90,13 +83,9 @@ open class WaterDropsView: UIView {
     
     fileprivate func randomRect() -> CGRect {
         
-        guard let config = viewConfiguration else {
-            return CGRect.zero
-        }
-        
         // make random number
         let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
-        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(config.maxDropSize - config.minDropSize))) + config.minDropSize
+        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(self.maxDropSize - self.minDropSize))) + self.minDropSize
           // make waterdrop
         let positionY = direction == .up ? self.frame.height : -randomSize
 
@@ -117,13 +106,8 @@ open class WaterDropsView: UIView {
 
     fileprivate func startViewAnimation(view: UIView) {
         
-        var randomDuration: TimeInterval = 3
-        var randomLength: CGFloat = 30
-        
-        if let config = viewConfiguration {
-            randomDuration = TimeInterval(arc4random_uniform(UInt32(config.maxDuration - config.minDuration))) + config.minDuration
-            randomLength = CGFloat(arc4random_uniform(UInt32(config.maxLength - config.minLength))) + config.minLength
-        }
+        let randomDuration: TimeInterval = TimeInterval(arc4random_uniform(UInt32(self.maxDuration - self.minDuration))) + self.minDuration
+        let randomLength: CGFloat = CGFloat(arc4random_uniform(UInt32(self.maxLength - self.minLength))) + self.minLength
         
         let length = direction == .up ? -randomLength : randomLength
         
@@ -144,14 +128,5 @@ open class WaterDropsView: UIView {
             })
         }
         
-    }
-    
-    fileprivate struct ViewConfig {
-        let minDropSize : CGFloat
-        let maxDropSize: CGFloat
-        let minLength : CGFloat
-        let maxLength : CGFloat
-        let minDuration : TimeInterval
-        let maxDuration : TimeInterval
     }
 }
