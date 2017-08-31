@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9B4B3C81F57A273009F8567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4B3C71F57A273009F8567 /* AppDelegate.swift */; };
+		F9B4B3CA1F57A273009F8567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4B3C91F57A273009F8567 /* ViewController.swift */; };
+		F9B4B3CD1F57A273009F8567 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B4B3CB1F57A273009F8567 /* Main.storyboard */; };
+		F9B4B3CF1F57A273009F8567 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B4B3CE1F57A273009F8567 /* Assets.xcassets */; };
+		F9B4B3D21F57A273009F8567 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B4B3D01F57A273009F8567 /* LaunchScreen.storyboard */; };
+		F9B4B3DD1F57A273009F8567 /* WaterDropExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4B3DC1F57A273009F8567 /* WaterDropExampleTests.swift */; };
+		F9B4B3E81F57A273009F8567 /* WaterDropExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4B3E71F57A273009F8567 /* WaterDropExampleUITests.swift */; };
+		F9B4B3F71F57A29A009F8567 /* WaterDropsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B4B3F61F57A29A009F8567 /* WaterDropsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9B4B3D91F57A273009F8567 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9B4B3BC1F57A273009F8567 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9B4B3C31F57A273009F8567;
+			remoteInfo = WaterDropExample;
+		};
+		F9B4B3E41F57A273009F8567 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9B4B3BC1F57A273009F8567 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9B4B3C31F57A273009F8567;
+			remoteInfo = WaterDropExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F9B4B3C41F57A273009F8567 /* WaterDropExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterDropExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B4B3C71F57A273009F8567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F9B4B3C91F57A273009F8567 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9B4B3CC1F57A273009F8567 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9B4B3CE1F57A273009F8567 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9B4B3D11F57A273009F8567 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9B4B3D31F57A273009F8567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B4B3D81F57A273009F8567 /* WaterDropExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterDropExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B4B3DC1F57A273009F8567 /* WaterDropExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDropExampleTests.swift; sourceTree = "<group>"; };
+		F9B4B3DE1F57A273009F8567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B4B3E31F57A273009F8567 /* WaterDropExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterDropExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B4B3E71F57A273009F8567 /* WaterDropExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDropExampleUITests.swift; sourceTree = "<group>"; };
+		F9B4B3E91F57A273009F8567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B4B3F61F57A29A009F8567 /* WaterDropsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterDropsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9B4B3C11F57A273009F8567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3D51F57A273009F8567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3E01F57A273009F8567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9B4B3BB1F57A273009F8567 = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3C61F57A273009F8567 /* WaterDropExample */,
+				F9B4B3DB1F57A273009F8567 /* WaterDropExampleTests */,
+				F9B4B3E61F57A273009F8567 /* WaterDropExampleUITests */,
+				F9B4B3C51F57A273009F8567 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9B4B3C51F57A273009F8567 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3C41F57A273009F8567 /* WaterDropExample.app */,
+				F9B4B3D81F57A273009F8567 /* WaterDropExampleTests.xctest */,
+				F9B4B3E31F57A273009F8567 /* WaterDropExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9B4B3C61F57A273009F8567 /* WaterDropExample */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3F51F57A29A009F8567 /* Sources */,
+				F9B4B3C71F57A273009F8567 /* AppDelegate.swift */,
+				F9B4B3C91F57A273009F8567 /* ViewController.swift */,
+				F9B4B3CB1F57A273009F8567 /* Main.storyboard */,
+				F9B4B3CE1F57A273009F8567 /* Assets.xcassets */,
+				F9B4B3D01F57A273009F8567 /* LaunchScreen.storyboard */,
+				F9B4B3D31F57A273009F8567 /* Info.plist */,
+			);
+			path = WaterDropExample;
+			sourceTree = "<group>";
+		};
+		F9B4B3DB1F57A273009F8567 /* WaterDropExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3DC1F57A273009F8567 /* WaterDropExampleTests.swift */,
+				F9B4B3DE1F57A273009F8567 /* Info.plist */,
+			);
+			path = WaterDropExampleTests;
+			sourceTree = "<group>";
+		};
+		F9B4B3E61F57A273009F8567 /* WaterDropExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3E71F57A273009F8567 /* WaterDropExampleUITests.swift */,
+				F9B4B3E91F57A273009F8567 /* Info.plist */,
+			);
+			path = WaterDropExampleUITests;
+			sourceTree = "<group>";
+		};
+		F9B4B3F51F57A29A009F8567 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F9B4B3F61F57A29A009F8567 /* WaterDropsView.swift */,
+			);
+			name = Sources;
+			path = ../../../Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9B4B3C31F57A273009F8567 /* WaterDropExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9B4B3EC1F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExample" */;
+			buildPhases = (
+				F9B4B3C01F57A273009F8567 /* Sources */,
+				F9B4B3C11F57A273009F8567 /* Frameworks */,
+				F9B4B3C21F57A273009F8567 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterDropExample;
+			productName = WaterDropExample;
+			productReference = F9B4B3C41F57A273009F8567 /* WaterDropExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F9B4B3D71F57A273009F8567 /* WaterDropExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9B4B3EF1F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExampleTests" */;
+			buildPhases = (
+				F9B4B3D41F57A273009F8567 /* Sources */,
+				F9B4B3D51F57A273009F8567 /* Frameworks */,
+				F9B4B3D61F57A273009F8567 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9B4B3DA1F57A273009F8567 /* PBXTargetDependency */,
+			);
+			name = WaterDropExampleTests;
+			productName = WaterDropExampleTests;
+			productReference = F9B4B3D81F57A273009F8567 /* WaterDropExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F9B4B3E21F57A273009F8567 /* WaterDropExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9B4B3F21F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExampleUITests" */;
+			buildPhases = (
+				F9B4B3DF1F57A273009F8567 /* Sources */,
+				F9B4B3E01F57A273009F8567 /* Frameworks */,
+				F9B4B3E11F57A273009F8567 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9B4B3E51F57A273009F8567 /* PBXTargetDependency */,
+			);
+			name = WaterDropExampleUITests;
+			productName = WaterDropExampleUITests;
+			productReference = F9B4B3E31F57A273009F8567 /* WaterDropExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9B4B3BC1F57A273009F8567 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = SeanChoi;
+				TargetAttributes = {
+					F9B4B3C31F57A273009F8567 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G79UR3L5C2;
+						ProvisioningStyle = Automatic;
+					};
+					F9B4B3D71F57A273009F8567 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G79UR3L5C2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F9B4B3C31F57A273009F8567;
+					};
+					F9B4B3E21F57A273009F8567 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G79UR3L5C2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F9B4B3C31F57A273009F8567;
+					};
+				};
+			};
+			buildConfigurationList = F9B4B3BF1F57A273009F8567 /* Build configuration list for PBXProject "WaterDropExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9B4B3BB1F57A273009F8567;
+			productRefGroup = F9B4B3C51F57A273009F8567 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9B4B3C31F57A273009F8567 /* WaterDropExample */,
+				F9B4B3D71F57A273009F8567 /* WaterDropExampleTests */,
+				F9B4B3E21F57A273009F8567 /* WaterDropExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9B4B3C21F57A273009F8567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B4B3D21F57A273009F8567 /* LaunchScreen.storyboard in Resources */,
+				F9B4B3CF1F57A273009F8567 /* Assets.xcassets in Resources */,
+				F9B4B3CD1F57A273009F8567 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3D61F57A273009F8567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3E11F57A273009F8567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9B4B3C01F57A273009F8567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B4B3F71F57A29A009F8567 /* WaterDropsView.swift in Sources */,
+				F9B4B3CA1F57A273009F8567 /* ViewController.swift in Sources */,
+				F9B4B3C81F57A273009F8567 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3D41F57A273009F8567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B4B3DD1F57A273009F8567 /* WaterDropExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B4B3DF1F57A273009F8567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B4B3E81F57A273009F8567 /* WaterDropExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9B4B3DA1F57A273009F8567 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9B4B3C31F57A273009F8567 /* WaterDropExample */;
+			targetProxy = F9B4B3D91F57A273009F8567 /* PBXContainerItemProxy */;
+		};
+		F9B4B3E51F57A273009F8567 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9B4B3C31F57A273009F8567 /* WaterDropExample */;
+			targetProxy = F9B4B3E41F57A273009F8567 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F9B4B3CB1F57A273009F8567 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9B4B3CC1F57A273009F8567 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9B4B3D01F57A273009F8567 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9B4B3D11F57A273009F8567 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9B4B3EA1F57A273009F8567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F9B4B3EB1F57A273009F8567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9B4B3ED1F57A273009F8567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F9B4B3EE1F57A273009F8567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F9B4B3F01F57A273009F8567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterDropExample.app/WaterDropExample";
+			};
+			name = Debug;
+		};
+		F9B4B3F11F57A273009F8567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterDropExample.app/WaterDropExample";
+			};
+			name = Release;
+		};
+		F9B4B3F31F57A273009F8567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WaterDropExample;
+			};
+			name = Debug;
+		};
+		F9B4B3F41F57A273009F8567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = G79UR3L5C2;
+				INFOPLIST_FILE = WaterDropExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WaterDropExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WaterDropExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9B4B3BF1F57A273009F8567 /* Build configuration list for PBXProject "WaterDropExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B4B3EA1F57A273009F8567 /* Debug */,
+				F9B4B3EB1F57A273009F8567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9B4B3EC1F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B4B3ED1F57A273009F8567 /* Debug */,
+				F9B4B3EE1F57A273009F8567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F9B4B3EF1F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B4B3F01F57A273009F8567 /* Debug */,
+				F9B4B3F11F57A273009F8567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F9B4B3F21F57A273009F8567 /* Build configuration list for PBXNativeTarget "WaterDropExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B4B3F31F57A273009F8567 /* Debug */,
+				F9B4B3F41F57A273009F8567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9B4B3BC1F57A273009F8567 /* Project object */;
+}
