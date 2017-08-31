@@ -10,17 +10,18 @@ import UIKit
 
 open class WaterDropsView: UIView {
     
-    ///Waterdrop's direction
-    open var direction : DropDirection = .up
-    
-    ///Number of drops
-    open var dropNum: Int = 10
-    
+    public typealias waterDropBuildClosure = (WaterDropsView) -> Void
     
     public enum DropDirection {
         case up
         case down
     }
+    
+    ///Number of drops
+    open var dropNum: Int = 10
+    
+    ///Waterdrop's direction
+    open var direction : DropDirection = .up
     
     ///Waterdrop's color
     open var color: UIColor = UIColor.blue.withAlphaComponent(0.7)
@@ -37,28 +38,24 @@ open class WaterDropsView: UIView {
     ///The maximum duration of animation
     open var maxDuration: TimeInterval = 12
     
-    public override init(frame: CGRect) {
-        self.dropNum = 10
-        self.color = UIColor.blue.withAlphaComponent(0.7)
-        self.minDropSize = 4
-        self.maxDropSize = 10
-        self.minLength = 0
-        self.maxLength = 100
-        self.minDuration = 4
-        self.maxDuration = 12
+    fileprivate var isStarted = false
+    fileprivate var viewConfiguration : ViewConfig!
+    
+    public init(frame: CGRect = CGRect.zero, build: waterDropBuildClosure) {
         super.init(frame: frame)
+        
+        viewConfiguration = ViewConfig(color: self.color,
+                                       minDropSize: self.minDropSize,
+                                       maxDropSize: self.maxDropSize,
+                                       minLength: self.minLength,
+                                       maxLength: self.maxLength,
+                                       minDuration: self.minDuration,
+                                       maxDuration: self.maxDuration)
+        
+        build(self)
     }
     
-    public init(frame: CGRect, direction: DropDirection = .up, dropNum: Int = 10, color: UIColor = UIColor.blue.withAlphaComponent(0.7), minDropSize: CGFloat = 4, maxDropSize: CGFloat = 10, minLength: CGFloat = 0, maxLength: CGFloat = 100, minDuration: TimeInterval = 4, maxDuration: TimeInterval = 12)  {
-        self.direction = direction
-        self.dropNum = dropNum
-        self.color = color
-        self.minDropSize = minDropSize
-        self.maxDropSize = maxDropSize
-        self.minLength = minLength
-        self.maxLength = maxLength
-        self.minDuration = minDuration
-        self.maxDuration = maxDuration
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -70,17 +67,29 @@ open class WaterDropsView: UIView {
         super.awakeFromNib()
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        resetRandomWaterDrop()
+    }
     
     /// Required : Add water drops animation in view
-    public func addAnimation() {
-        let viewConfiguration = ViewConfig(color: self.color,
-                                           minDropSize: self.minDropSize,
-                                           maxDropSize: self.maxDropSize,
-                                           minLength: self.minLength,
-                                           maxLength: self.maxLength,
-                                           minDuration: self.minDuration,
-                                           maxDuration: self.maxDuration)
+    public func startAnimation() {
+        isStarted = true
+        viewConfiguration = ViewConfig(color: self.color,
+                                       minDropSize: self.minDropSize,
+                                       maxDropSize: self.maxDropSize,
+                                       minLength: self.minLength,
+                                       maxLength: self.maxLength,
+                                       minDuration: self.minDuration,
+                                       maxDuration: self.maxDuration)
         makeRandomWaterDrops(num: dropNum, config: viewConfiguration, direction: direction)
+    }
+    
+    public func stopAnimation() {
+        isStarted = false
+        self.subviews.forEach {
+            $0.removeFromSuperview()
+        }
     }
     
     fileprivate func makeRandomWaterDrops(num: Int, config: ViewConfig, direction: DropDirection = .up) {
@@ -89,28 +98,54 @@ open class WaterDropsView: UIView {
         }
     }
     
-    fileprivate func randomWaterdrop(config: ViewConfig, direction: DropDirection = .up) {
+    fileprivate func randomRect() -> CGRect {
         
         // make random number
         let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
-        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(config.maxDropSize - config.minDropSize))) + config.minDropSize
-        let randomDuration: TimeInterval = TimeInterval(arc4random_uniform(UInt32(config.maxDuration - config.minDuration))) + config.minDuration
-        let randomLength: CGFloat =  CGFloat(arc4random_uniform(UInt32(config.maxLength - config.minLength))) + config.minLength
-        let length = direction == .up ? -randomLength : randomLength
-        
-        // make waterdrop
+        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(viewConfiguration.maxDropSize - viewConfiguration.minDropSize))) + viewConfiguration.minDropSize
+          // make waterdrop
         let positionY = direction == .up ? self.frame.height : -randomSize
+
+        return CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
+    }
+    
+    fileprivate func randomWaterdrop(config: ViewConfig, direction: DropDirection = .up) {
+        
         let waterdrop : UIView = UIView()
-        waterdrop.frame = CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
+        waterdrop.frame = randomRect()
+        
         waterdrop.backgroundColor = config.color
-        waterdrop.layer.cornerRadius = randomSize/2
+        waterdrop.layer.cornerRadius = waterdrop.frame.size.width/2
         self.addSubview(waterdrop)
+        
+        startViewAnimation(view: waterdrop)
+    }
+
+    fileprivate func startViewAnimation(view: UIView) {
+        
+        let randomDuration: TimeInterval = TimeInterval(arc4random_uniform(UInt32(viewConfiguration.maxDuration - viewConfiguration.minDuration))) + viewConfiguration.minDuration
+        
+        let randomLength: CGFloat =  CGFloat(arc4random_uniform(UInt32(viewConfiguration.maxLength - viewConfiguration.minLength))) + viewConfiguration.minLength
+        
+        let length = direction == .up ? -randomLength : randomLength
         
         // animation
         UIView.animate(withDuration: randomDuration, delay: 0.0, options: .repeat, animations: {
-            waterdrop.frame.origin.y += length
-            waterdrop.alpha = 0.0
+            view.frame.origin.y += length
+            view.alpha = 0.0
         }, completion: nil)
+
+    }
+    
+    fileprivate func resetRandomWaterDrop() {
+        
+        if isStarted {
+            for view in self.subviews {
+                view.frame = randomRect()
+                startViewAnimation(view: view)
+            }
+        }
+        
     }
     
     fileprivate struct ViewConfig {
