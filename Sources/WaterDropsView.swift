@@ -70,7 +70,9 @@ open class WaterDropsView: UIView {
     
     public func stopAnimation() {
         isStarted = false
-        self.layer.removeAllAnimations()
+        self.layer.sublayers?.forEach {
+            $0.removeAllAnimations()
+        }
     }
     
     fileprivate func makeRandomWaterDrops(num: Int, direction: DropDirection = .up) {
