@@ -71,7 +71,7 @@ open class WaterDropsView: UIView {
     public func stopAnimation() {
         isStarted = false
         self.layer.sublayers?.forEach {
-            $0.removeAllAnimations()
+            $0.removeFromSuperlayer()
         }
     }
     
