@@ -39,18 +39,24 @@ open class WaterDropsView: UIView {
     open var maxDuration: TimeInterval = 12
     
     fileprivate var isStarted = false
+
+    private var waterAnimations = [CAAnimation]()
+    private var animationGroup = CAAnimationGroup()
     
     public init(frame: CGRect = CGRect.zero, build: waterDropBuildClosure) {
         super.init(frame: frame)
+        addAppCycleObserver()
         build(self)
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        addAppCycleObserver()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        addAppCycleObserver()
     }
     
     open override func awakeFromNib() {
@@ -73,6 +79,46 @@ open class WaterDropsView: UIView {
         self.layer.sublayers?.forEach {
             $0.removeFromSuperlayer()
         }
+    }
+    
+    @objc open func pauseAnimation() {
+        
+        layer.sublayers?.forEach {
+            if let animation = $0.animation(forKey: "animationGroup") {
+                waterAnimations.append(animation)
+                $0.pause()
+            }
+        }
+    
+    }
+    
+    @objc open func resumeAnimation() {
+        
+        if !waterAnimations.isEmpty {
+            for i in 0 ..< waterAnimations.count {
+                layer.sublayers?[i].add(waterAnimations[i], forKey: "animationGroup")
+            }
+            waterAnimations.removeAll()
+        }
+        
+        layer.sublayers?.forEach {
+            $0.resume()
+        }
+    }
+    
+    
+    fileprivate func addAppCycleObserver() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(pauseAnimation),
+                                               name: .UIApplicationWillResignActive,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(resumeAnimation),
+                                               name: .UIApplicationWillEnterForeground,
+                                               object: nil)
+        
     }
     
     fileprivate func makeRandomWaterDrops(num: Int, direction: DropDirection = .up) {
@@ -102,6 +148,7 @@ open class WaterDropsView: UIView {
         self.layer.addSublayer(waterDropLayer)
         
         startLayerAnimation(layer: waterDropLayer)
+        
     }
     
     fileprivate func startLayerAnimation(layer: CAShapeLayer) {
@@ -120,7 +167,7 @@ open class WaterDropsView: UIView {
         alphaAnimation.fromValue = layer.opacity
         alphaAnimation.toValue = 0.0
         
-        let animationGroup = CAAnimationGroup()
+        animationGroup = CAAnimationGroup()
         animationGroup.animations = [dropAnimation, alphaAnimation]
         animationGroup.duration = randomDuration
         animationGroup.repeatCount = .greatestFiniteMagnitude
@@ -141,4 +188,28 @@ open class WaterDropsView: UIView {
         
     }
 }
+
+extension CALayer {
+    
+    fileprivate func pause() {
+        
+        let pausedTime = self.convertTime(CACurrentMediaTime(), from: nil)
+        self.speed = 0.0
+        self.timeOffset = pausedTime
+        
+    }
+    
+    fileprivate func resume() {
+        
+        let pausedTime = self.timeOffset
+        self.speed = 1.0
+        self.timeOffset = 0.0
+        self.beginTime = 0.0
+        let timeSincePause = self.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        self.beginTime = timeSincePause
+        
+    }
+    
+}
+
 
