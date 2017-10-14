@@ -39,9 +39,29 @@ open class WaterDropsView: UIView {
     open var maxDuration: TimeInterval = 12
     
     fileprivate var isStarted = false
-
+    
+    fileprivate var randomDuration : TimeInterval {
+        return TimeInterval(arc4random_uniform(UInt32(self.maxDuration - self.minDuration))) + self.minDuration
+    }
+    
+    fileprivate var randomLength : CGFloat {
+        return CGFloat(arc4random_uniform(UInt32(self.maxLength - self.minLength))) + self.minLength
+    }
+    
+    fileprivate var randomRect : CGRect {
+        
+        // make random number
+        let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
+        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(self.maxDropSize - self.minDropSize))) + self.minDropSize
+        
+        // make waterdrop
+        let positionY = direction == .up ? self.frame.height - randomSize : 0
+        
+        return CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
+    }
+    
     private var waterAnimations = [CAAnimation]()
-    private var animationGroup = CAAnimationGroup()
+    private var animationGroup : CAAnimationGroup?
     
     public init(frame: CGRect = CGRect.zero, build: waterDropBuildClosure) {
         super.init(frame: frame)
@@ -127,21 +147,10 @@ open class WaterDropsView: UIView {
         }
     }
     
-    fileprivate func randomRect() -> CGRect {
-        
-        // make random number
-        let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
-        let randomSize: CGFloat = CGFloat(arc4random_uniform(UInt32(self.maxDropSize - self.minDropSize))) + self.minDropSize
-        // make waterdrop
-        let positionY = direction == .up ? self.frame.height : -randomSize
-        
-        return CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
-    }
-    
     fileprivate func randomWaterdrop(direction: DropDirection = .up) {
         
         let waterDropLayer = CAShapeLayer()
-        let path = UIBezierPath(ovalIn: randomRect())
+        let path = UIBezierPath(ovalIn: randomRect)
         
         waterDropLayer.path = path.cgPath
         waterDropLayer.fillColor = self.color.cgColor
@@ -152,9 +161,6 @@ open class WaterDropsView: UIView {
     }
     
     fileprivate func startLayerAnimation(layer: CAShapeLayer) {
-        
-        let randomDuration: TimeInterval = TimeInterval(arc4random_uniform(UInt32(self.maxDuration - self.minDuration))) + self.minDuration
-        let randomLength: CGFloat = CGFloat(arc4random_uniform(UInt32(self.maxLength - self.minLength))) + self.minLength
         
         let length = direction == .up ? -randomLength : randomLength
         
@@ -180,7 +186,7 @@ open class WaterDropsView: UIView {
         if isStarted {
             self.layer.sublayers?.forEach({
                 if let waterDropLayer = $0 as? CAShapeLayer {
-                    waterDropLayer.path = UIBezierPath(ovalIn: randomRect()).cgPath
+                    waterDropLayer.path = UIBezierPath(ovalIn: randomRect).cgPath
                     startLayerAnimation(layer: waterDropLayer)
                 }
             })
